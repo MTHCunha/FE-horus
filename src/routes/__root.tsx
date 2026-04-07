@@ -10,6 +10,7 @@ function RootComponent() {
   return (
     <React.Fragment>
       <Link to="/">Main Page</Link>
+      <Link to="/login">Login Page</Link>
       <Outlet />
     </React.Fragment>
   );
