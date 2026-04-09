@@ -1,3 +1,4 @@
+import { MainPage } from "@/pages/Home";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -5,4 +6,6 @@ export const Route = createFileRoute("/")({
 });
 
 // eslint-disable-next-line react-refresh/only-export-components
-function RouteComponent() {}
+function RouteComponent() {
+  return <MainPage />;
+}
