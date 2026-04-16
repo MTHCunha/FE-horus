@@ -1,9 +1,5 @@
-import { MainPageCarousel } from "./components/Carousel";
+import LandingNavBar from "@/components/Layout/Header/Navbar";
 
 export const MainPage = () => {
-  return (
-    <div style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <MainPageCarousel />
-    </div>
-  );
+  return <LandingNavBar />;
 };

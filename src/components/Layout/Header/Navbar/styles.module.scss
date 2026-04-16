@@ -1,0 +1,17 @@
+.landingNavBar__container {
+  background-color: white;
+}
+
+.landingNavBar__toolBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landingNavBar__logoName {
+  color: var(--horus-blue);
+}
+
+.landingNavBar__loginButton {
+  color: var(--horus-blue) !important;
+  font-size: 0.7rem !important;
+}
