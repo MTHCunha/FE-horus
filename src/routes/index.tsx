@@ -1,4 +1,4 @@
-import { MainPage } from "@/pages/Home";
+import { MainPage } from "@/pages/Landing";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
