@@ -5,10 +5,45 @@ import {
   Box,
   Typography,
   Button,
+  ButtonBase,
 } from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
 import styles from "./styles.module.scss";
 import { Link } from "@tanstack/react-router";
+import logoHorus from "@/assets/horus-logo.png";
+
+function Logo() {
+  return (
+    <ButtonBase
+      component={Link}
+      to="/"
+      disableRipple // Opcional: remove a onda se quiser um visual mais estático
+      sx={{
+        borderRadius: "4px",
+        p: 0.5,
+        display: "flex",
+        alignItems: "center",
+        gap: 1, // Cria o espaçamento perfeito entre img e texto
+        transition: "opacity 0.2s",
+        "&:hover": { opacity: 0.8 }, // Um feedback visual suave ao passar o mouse
+      }}
+    >
+      <Box
+        component="img"
+        src={logoHorus}
+        alt=""
+        sx={{
+          height: { xs: 40, md: 50 },
+          width: "auto",
+          display: "block",
+        }}
+      />
+
+      <Typography noWrap className={styles.landingNavBar__logoName}>
+        HÓRUS
+      </Typography>
+    </ButtonBase>
+  );
+}
 
 export default function LandingNavBar() {
   return (
@@ -25,22 +60,22 @@ export default function LandingNavBar() {
               color: "inherit",
             }}
           >
-            <AdbIcon sx={{ mr: 1, color: "black" }} />
-            <Typography noWrap className={styles.landingNavBar__logoName}>
-              LOGO
-            </Typography>
+            <Logo />
           </Box>
-          <Box>
+          <Box sx={{ gap: 5 }}>
             <Button
               component={Link}
               to="/Login"
               variant="text"
               className={styles.landingNavBar__loginButton}
             >
-              Entrar
+              Login
             </Button>
-            <Button variant="contained" size="medium" sx={{ ml: 1 }}>
-              Cadastrar
+            <Button
+              variant="outlined"
+              className={styles.landingNavBar__signupButton}
+            >
+              Sign-Up
             </Button>
           </Box>
         </Toolbar>

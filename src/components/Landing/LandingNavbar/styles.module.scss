@@ -9,9 +9,43 @@
 
 .landingNavBar__logoName {
   color: var(--horus-blue);
+  letter-spacing: ".1rem";
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder !important;
 }
 
 .landingNavBar__loginButton {
-  color: var(--horus-blue) !important;
   font-size: 0.7rem !important;
+  color: var(--horus-blue) !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.landingNavBar__loginButton:hover {
+  background-color: var(--horus-blue-hover) !important;
+  text-decoration: underline !important;
+}
+
+.landingNavBar__signupButton {
+  width: auto !important;
+  height: auto !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  color: var(--horus-blue) !important;
+  border: 1px solid var(--horus-blue) !important;
+  padding: 0.5rem 2.5rem !important;
+  border-radius: 4px !important;
+  transition: background-color 0.2s ease !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.landingNavBar__signupButton:hover {
+  background-color: #003061 !important;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3) !important;
+  color: white !important;
 }

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   /* Cor Base */
   --horus-blue: #073974;
@@ -34,8 +37,9 @@
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+  --monteserrat: system-ui, "Montserrat", sans-serif;
 
-  font: 18px/145% var(--sans);
+  font: 18px/145% var(--monteserrat);
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
@@ -46,7 +50,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-width: 1024px) {
-    font-size: 16px;
+    font-size: 62, 5%;
   }
 }
 
