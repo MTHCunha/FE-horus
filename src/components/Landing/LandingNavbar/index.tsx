@@ -6,38 +6,31 @@ import {
   Typography,
   Button,
   ButtonBase,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
 } from "@mui/material";
 import styles from "./styles.module.scss";
 import { Link } from "@tanstack/react-router";
-import logoHorus from "@/assets/horus-logo.png";
+import logoHorus from "@/assets/logo.png";
+
+const pages = ["Projeto", "Referencial Teórico", "CEFSA", "Sobre nós"];
 
 function Logo() {
   return (
     <ButtonBase
       component={Link}
       to="/"
-      disableRipple // Opcional: remove a onda se quiser um visual mais estático
-      sx={{
-        borderRadius: "4px",
-        p: 0.5,
-        display: "flex",
-        alignItems: "center",
-        gap: 1, // Cria o espaçamento perfeito entre img e texto
-        transition: "opacity 0.2s",
-        "&:hover": { opacity: 0.8 }, // Um feedback visual suave ao passar o mouse
-      }}
+      disableRipple
+      className={styles.landingNavBar__logoBtnBase}
     >
       <Box
         component="img"
         src={logoHorus}
         alt=""
-        sx={{
-          height: { xs: 40, md: 50 },
-          width: "auto",
-          display: "block",
-        }}
+        className={styles.landingNavBar__logoImg}
       />
-
       <Typography noWrap className={styles.landingNavBar__logoName}>
         HÓRUS
       </Typography>
@@ -47,22 +40,46 @@ function Logo() {
 
 export default function LandingNavBar() {
   return (
-    <AppBar position="static">
+    <AppBar
+      position="absolute"
+      color="transparent"
+      className={styles.landingNavBar__appBar}
+    >
       <Container maxWidth="xl" className={styles.landingNavBar__container}>
         <Toolbar disableGutters className={styles.landingNavBar__toolBar}>
           <Box
             component={Link}
             to="/"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              textDecoration: "none",
-              color: "inherit",
-            }}
+            className={styles.landingNavBar__logoLink}
           >
             <Logo />
           </Box>
-          <Box sx={{ gap: 5 }}>
+
+          <Box className={styles.landingNavBar__navList}>
+            <List className={styles.landingNavBar__list}>
+              {pages.map((page) => (
+                <ListItem
+                  key={page}
+                  disablePadding
+                  className={styles.landingNavBar__listItem}
+                >
+                  <ListItemButton
+                    component={Link}
+                    to={`/${page.toLowerCase().replace(/\s+/g, "-")}`}
+                    className={styles.landingNavBar__listItemButton}
+                  >
+                    <ListItemText
+                      primary={page}
+                      className={styles.landingNavBar__listItemText}
+                    />
+                    <Box className={styles.bottomBar} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+
+          <Box className={styles.landingNavBar__actions}>
             <Button
               component={Link}
               to="/Login"

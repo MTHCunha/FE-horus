@@ -13,16 +13,15 @@ const CarouselContent = ({
   return (
     <Box
       sx={{
-        marginTop: "0.2rem",
         width: "100%",
-        height: "30rem",
+        height: "100vh",
         position: "relative",
         overflow: "hidden",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        alignItems: "flex-start",
       }}
     >
+      {/* Background Image */}
       <Box
         sx={{
           position: "absolute",
@@ -37,6 +36,7 @@ const CarouselContent = ({
         }}
       />
 
+      {/* Overlay Gradient */}
       <Box
         sx={{
           position: "absolute",
@@ -44,22 +44,24 @@ const CarouselContent = ({
           left: 0,
           width: "100%",
           height: "100%",
-
           background: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))",
           zIndex: 2,
         }}
       />
 
+      {/* Content Container */}
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           zIndex: 3,
-          alignItems: "flex-start",
+          alignItems: "flex-start", // Alinha na esquerda (eixo X)
           marginLeft: "4rem",
-          color: "#fff", // Garante que o texto seja branco sobre a sombra
+          color: "#fff",
           width: "100%",
           px: 2,
+ 
+          pt: "8rem",
         }}
       >
         {children}

@@ -15,6 +15,7 @@ const LandingCarousel = () => {
       <CarouselContent backgroundImage={team}>
         <Typography
           sx={{
+            marginTop: "8rem",
             fontSize: "3rem",
             lineHeight: "3.5rem",
             textWrap: "wrap",
