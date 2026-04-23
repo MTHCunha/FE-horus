@@ -15,7 +15,7 @@ import styles from "./styles.module.scss";
 import { Link } from "@tanstack/react-router";
 import logoHorus from "@/assets/logo.png";
 
-const pages = ["Projeto", "Referencial Teórico", "CEFSA", "Sobre nós"];
+const pages = ["Projeto", "Referencial Teórico", "Sobre nós"];
 
 function Logo() {
   return (

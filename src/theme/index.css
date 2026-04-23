@@ -19,6 +19,7 @@
   --horus-blue-800: #1e40af;
   --horus-blue-900: #1e3a8a;
   --horus-blue-950: #073974; /* Sua cor original encaixa bem aqui como o tom mais profundo */
+  --hover-landing-button: #ffffff50;
 }
 
 :root {
