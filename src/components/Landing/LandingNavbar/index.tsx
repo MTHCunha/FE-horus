@@ -48,7 +48,7 @@ export default function LandingNavBar() {
       className={styles.landingNavBar__appBar}
       sx={{ backgroundImage: "none" }} // MUI v5 adiciona gradiente em AppBars escuros
     >
-      <Container maxWidth="xl" className={styles.landingNavBar__container}>
+      <Container maxWidth={false} className={styles.landingNavBar__container}>
         <Toolbar disableGutters className={styles.landingNavBar__toolBar}>
           <Logo />
 
