@@ -2,7 +2,8 @@
   display: flex !important;
   width: 25rem !important;
   height: 30rem !important;
-  background-color: white !important;
+  background-color: transparent !important;
+  border: 0.2rem dashed var(--horus-blue-200);
   flex-direction: column;
   border-radius: 15px;
 }
