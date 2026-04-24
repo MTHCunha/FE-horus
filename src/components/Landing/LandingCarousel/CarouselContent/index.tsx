@@ -1,53 +1,35 @@
 import type React from "react";
 import { Box } from "@mui/material";
+import styles from "./styles.module.scss";
 
 type CarouselContentProps = {
   children: React.ReactNode;
-  backgroundImage: string;
+  background: string;
 };
 
-const CarouselContent = ({
-  children,
-  backgroundImage,
-}: CarouselContentProps) => {
-  return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100vh",
-        position: "relative",
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      {/* Background Image */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          zIndex: 1,
-        }}
-      />
+const isVideo = (src: string) => /\.(mp4|webm|ogg)(\?.*)?$/i.test(src);
 
-      {/* Overlay Gradient */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))",
-          zIndex: 2,
-        }}
-      />
+const CarouselContent = ({ children, background }: CarouselContentProps) => {
+  return (
+    <Box className={styles.wrapper}>
+      {isVideo(background) ? (
+        <Box
+          component="video"
+          className={styles.video}
+          src={background}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      ) : (
+        <Box
+          className={styles.image}
+          style={{ backgroundImage: `url(${background})` }}
+        />
+      )}
+
+      <Box className={styles.overlay} />
 
       {children}
     </Box>
