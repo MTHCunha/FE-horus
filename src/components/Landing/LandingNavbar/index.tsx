@@ -43,17 +43,14 @@ export default function LandingNavBar() {
     <AppBar
       position="absolute"
       color="transparent"
+      elevation={0} // evita sombra residual
+      enableColorOnDark
       className={styles.landingNavBar__appBar}
+      sx={{ backgroundImage: "none" }} // MUI v5 adiciona gradiente em AppBars escuros
     >
       <Container maxWidth="xl" className={styles.landingNavBar__container}>
         <Toolbar disableGutters className={styles.landingNavBar__toolBar}>
-          <Box
-            component={Link}
-            to="/"
-            className={styles.landingNavBar__logoLink}
-          >
-            <Logo />
-          </Box>
+          <Logo />
 
           <Box className={styles.landingNavBar__navList}>
             <List className={styles.landingNavBar__list}>
