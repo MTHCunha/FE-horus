@@ -1,3 +1,11 @@
+.contentBox {
+  display: flex !important;
+  z-index: 3 !important;
+  padding-left: 7.4rem;
+  align-items: start !important;
+  flex-direction: column;
+}
+
 .contentButton {
   border: 1px solid white !important;
   width: auto !important;
@@ -10,12 +18,11 @@
 .contentButton:hover {
   /* Adicione !important aqui para sobrescrever o white !important anterior */
   background-color: var(--hover-landing-button) !important;
-  color: var(--horus-blue) !important;
   border-color: var(--hover-landing-button) !important;
 }
 
 .contentTypography {
-  margin-top: 5rem !important;
+  color: white !important;
   font-size: 3rem !important;
   line-height: 3.5rem !important;
   text-wrap: "wrap" !important;

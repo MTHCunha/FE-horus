@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, Box } from "@mui/material";
 import { Link } from "@tanstack/react-router";
 import styles from "./styles.module.scss";
 
@@ -16,7 +16,7 @@ export default function Content({
   buttonText,
 }: ContentProps): React.ReactNode {
   return (
-    <>
+    <Box className={styles.contentBox}>
       <Typography
         className={styles.contentTypography}
         sx={{
@@ -28,6 +28,6 @@ export default function Content({
       <Button component={Link} to={to} className={styles.contentButton}>
         {buttonText}
       </Button>
-    </>
+    </Box>
   );
 }

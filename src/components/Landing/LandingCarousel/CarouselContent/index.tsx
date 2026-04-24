@@ -18,7 +18,7 @@ const CarouselContent = ({
         position: "relative",
         overflow: "hidden",
         display: "flex",
-        alignItems: "flex-start",
+        alignItems: "center",
       }}
     >
       {/* Background Image */}
@@ -49,23 +49,7 @@ const CarouselContent = ({
         }}
       />
 
-      {/* Content Container */}
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          zIndex: 3,
-          alignItems: "flex-start", // Alinha na esquerda (eixo X)
-          marginLeft: "4rem",
-          color: "#fff",
-          width: "100%",
-          px: 2,
- 
-          pt: "8rem",
-        }}
-      >
-        {children}
-      </Box>
+      {children}
     </Box>
   );
 };
