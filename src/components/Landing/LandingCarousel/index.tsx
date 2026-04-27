@@ -7,7 +7,7 @@ import Content from "./Content";
 
 const LandingCarousel = () => {
   return (
-    <Carousel autoplay={{ dotDuration: true }} autoplaySpeed={4000}>
+    <Carousel autoplay={{ dotDuration: true }} autoplaySpeed={2000}>
       <CarouselContent background={team}>
         <Content
           buttonText="About Us"

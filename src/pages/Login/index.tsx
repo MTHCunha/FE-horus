@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import loginVideo from "@/assets/loginVideo.mp4";
+import loginVideo from "@/assets/backLogin.mp4";
 import FormLogin from "@/components/Login/LoginForm";
 
 const LoginPage = () => {
