@@ -7,88 +7,99 @@ import {
   InputAdornment,
   InputLabel,
   OutlinedInput,
-  TextField,
   Typography,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Link } from "@tanstack/react-router";
-import React from "react";
-import styles from "./styles.module.scss";
+import { useState } from "react";
+import { User } from "lucide-react";
 import logoHorus from "@/assets/horus-logo.png";
+import styles from "./styles.module.scss";
+
+const FIELD_HEIGHT = "2.5rem";
+const LABEL_FONT_SIZE = 14;
 
 const FormLogin = () => {
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleTogglePassword = () => setShowPassword((prev) => !prev);
 
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>,
-  ) => {
+  const preventMouseDefault = (event: React.MouseEvent<HTMLButtonElement>) =>
     event.preventDefault();
-  };
-
-  const handleMouseUpPassword = (
-    event: React.MouseEvent<HTMLButtonElement>,
-  ) => {
-    event.preventDefault();
-  };
 
   return (
     <Box className={styles.loginForm}>
       <Box
         component="img"
         src={logoHorus}
-        alt=""
+        alt="Horus logo"
         className={styles.loginForm__logoImg}
       />
+
       <Typography
         sx={{
           color: "var(--horus-blue)",
-          fontWeight: "bolder",
-          margin: ".1rem auto .1rem auto",
+          fontWeight: "bold",
+          margin: ".1rem auto",
         }}
       >
-        Bem vindo de volta !
+        Bem vindo de volta!
       </Typography>
       <Typography
         sx={{
           color: "var(--horus-blue)",
-          margin: ".1rem auto 1.5rem auto",
           fontSize: ".8rem",
+          margin: ".1rem auto 1.5rem",
         }}
       >
         Conectando conhecimento clínico e precisão de IA na saúde da retina.
       </Typography>
 
       <Box className={styles.loginForm__fields}>
-        <TextField
-          id="login-email"
-          label="Email"
-          placeholder="seu@email.com"
-          type="email"
-          required
-          className={styles.loginForm__textField}
-        />
         <FormControl fullWidth variant="outlined" required>
-          <InputLabel htmlFor="login-password">Senha</InputLabel>
+          <InputLabel sx={{ fontSize: LABEL_FONT_SIZE }} htmlFor="login-email">
+            Email
+          </InputLabel>
+          <OutlinedInput
+            id="login-email"
+            label="Email"
+            sx={{ height: FIELD_HEIGHT }}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton edge="end">
+                  <User size={18} />
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+
+        <FormControl fullWidth variant="outlined" required>
+          <InputLabel
+            sx={{ fontSize: LABEL_FONT_SIZE }}
+            htmlFor="login-password"
+          >
+            Senha
+          </InputLabel>
           <OutlinedInput
             id="login-password"
+            label="Senha"
             type={showPassword ? "text" : "password"}
+            sx={{ height: FIELD_HEIGHT }}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
                   aria-label={showPassword ? "Ocultar senha" : "Exibir senha"}
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  onMouseUp={handleMouseUpPassword}
+                  onClick={handleTogglePassword}
+                  onMouseDown={preventMouseDefault}
+                  onMouseUp={preventMouseDefault}
                   edge="end"
                 >
                   {showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
               </InputAdornment>
             }
-            label="Senha"
           />
         </FormControl>
       </Box>
@@ -105,6 +116,8 @@ const FormLogin = () => {
       <Box className={styles.loginForm__actions}>
         <Button
           type="submit"
+          component={Link}
+          to="/dashboard"
           variant="contained"
           className={styles.loginForm__loginButton}
         >

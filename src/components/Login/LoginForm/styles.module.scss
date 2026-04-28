@@ -1,6 +1,6 @@
 .loginForm {
   width: 19rem;
-  height: 30rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
@@ -12,14 +12,15 @@
   -webkit-backdrop-filter: blur(5.5px);
   border: 1px solid var(--horus-blue);
 
+  &__logoImg {
+    width: 4rem;
+    margin: 0 auto;
+  }
+
   &__fields {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-  }
-
-  &__textField {
-    width: 100%; // corrigido: era 20rem, causava overflow no container de 19rem
   }
 
   &__forgotPassword {
@@ -29,7 +30,7 @@
     margin-left: auto !important;
     margin-top: 0.5rem !important;
     color: var(--horus-blue) !important;
-    font-weight: bolder !important;
+    font-weight: bold !important;
     background-color: transparent;
 
     &:hover {
@@ -46,20 +47,27 @@
 
   &__loginButton {
     background-color: var(--horus-blue) !important;
+    font-size: 0.7rem !important;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: var(--horus-blue-500) !important;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+    }
   }
 
   &__registerButton {
     background-color: transparent !important;
     border: 1px solid var(--horus-blue) !important;
     color: var(--horus-blue) !important;
-    transition: ease;
+    transition: background-color 0.2s ease;
+    font-size: 0.7rem !important;
+    transition: all 0.3s ease;
 
     &:hover {
-      background-color: white !important;
+      background-color: var(--horus-blue-50) !important;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+      scale: 1.02;
     }
-  }
-  &__logoImg {
-    width: 4rem;
-    margin: 0 auto;
   }
 }
